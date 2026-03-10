@@ -12,12 +12,12 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
-  { label: "Clients", href: "#clients" },
 ];
 
 export function Navbar() {
@@ -34,7 +34,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#09090b]/90 backdrop-blur-xl border-b border-white/[0.07]"
+          ? "bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-xl border-b border-black/[0.07] dark:border-white/[0.07]"
           : "bg-transparent"
       }`}
     >
@@ -42,7 +42,7 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-[17px] font-bold tracking-tight text-white hover:text-white/70 transition-colors duration-200"
+          className="text-[17px] font-bold tracking-tight text-foreground hover:text-foreground/70 transition-colors duration-200"
         >
           Rovex
         </Link>
@@ -53,7 +53,7 @@ export function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-[13px] font-normal text-white/50 hover:text-white transition-colors duration-200"
+              className="text-[13px] font-normal text-foreground/50 hover:text-foreground transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -62,18 +62,19 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           <Link
-            href="#clients"
+            href="#services"
             className={cn(
               buttonVariants({ variant: "ghost", size: "sm" }),
-              "rounded-full text-[13px] text-white/50 hover:text-white"
+              "rounded-full text-[13px] text-foreground/50 hover:text-foreground"
             )}
           >
-            Our Work
+            Our Services
           </Link>
           <Link
             href="#contact"
-            className="rounded-full px-5 text-[13px] font-semibold bg-white text-[#09090b] hover:bg-white/90 transition-colors inline-flex h-8 items-center"
+            className="rounded-full px-5 text-[13px] font-semibold bg-[#09090b] text-white hover:bg-[#09090b]/80 dark:bg-white dark:text-[#09090b] dark:hover:bg-white/90 transition-colors inline-flex h-8 items-center"
           >
             Contact Us
           </Link>
@@ -84,7 +85,7 @@ export function Navbar() {
           <SheetTrigger
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
-              "lg:hidden text-[#1d1d1f]/80"
+              "lg:hidden text-foreground/80"
             )}
           >
             <Menu className="h-5 w-5" />
@@ -92,10 +93,10 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-80 border-white/[0.07] bg-[#09090b] backdrop-blur-xl"
+            className="w-80 border-black/[0.07] dark:border-white/[0.07] bg-background backdrop-blur-xl"
           >
             <SheetHeader className="mb-6">
-              <SheetTitle className="text-left text-[17px] font-bold text-white">
+              <SheetTitle className="text-left text-[17px] font-bold text-foreground">
                 Rovex
               </SheetTitle>
             </SheetHeader>
@@ -106,23 +107,29 @@ export function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center rounded-lg px-3 py-3 text-[15px] font-normal text-white/50 hover:bg-white/5 hover:text-white transition-colors duration-200"
+                  className="flex items-center rounded-lg px-3 py-3 text-[15px] font-normal text-foreground/50 hover:bg-foreground/5 hover:text-foreground transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-6 flex flex-col gap-2 px-3">
+              <div className="mt-4 flex items-center gap-2 px-3">
+                <ThemeToggle />
+                <span className="text-[13px] text-foreground/40">
+                  Toggle theme
+                </span>
+              </div>
+              <div className="mt-4 flex flex-col gap-2 px-3">
                 <Link
-                  href="#clients"
+                  href="#services"
                   onClick={() => setOpen(false)}
-                  className="w-full justify-center text-[15px] inline-flex h-10 items-center rounded-full border border-white/15 text-white hover:bg-white/5 transition-colors"
+                  className="w-full justify-center text-[15px] inline-flex h-10 items-center rounded-full border border-foreground/15 text-foreground hover:bg-foreground/5 transition-colors"
                 >
-                  Our Work
+                  Our Services
                 </Link>
                 <Link
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="w-full justify-center text-[15px] font-semibold inline-flex h-10 items-center rounded-full bg-white text-[#09090b] hover:bg-white/90 transition-colors"
+                  className="w-full justify-center text-[15px] font-semibold inline-flex h-10 items-center rounded-full bg-[#09090b] text-white hover:bg-[#09090b]/80 dark:bg-white dark:text-[#09090b] dark:hover:bg-white/90 transition-colors"
                 >
                   Contact Us
                 </Link>

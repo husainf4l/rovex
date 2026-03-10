@@ -41,14 +41,14 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="clients" className="bg-[#111114] py-28 border-t border-white/[0.06]">
+    <section id="clients" className="bg-card py-28 border-t border-border">
       <div className="mx-auto max-w-[980px] px-5">
         {/* Header */}
         <div className="mb-16 text-center">
           <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#0071e3]">
             Client Stories
           </p>
-          <h2 className="text-[48px] font-extrabold leading-[1.06] tracking-[-0.03em] text-white sm:text-[56px]">
+          <h2 className="text-[48px] font-extrabold leading-[1.06] tracking-[-0.03em] text-foreground sm:text-[56px]">
             Trusted by teams
             <br />
             across Europe.
@@ -60,7 +60,7 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <Card
               key={i}
-              className="rounded-2xl border border-white/[0.07] bg-[#1a1a1f] shadow-none"
+              className="rounded-2xl border border-border bg-secondary shadow-none"
             >
               <CardContent className="flex flex-col gap-5 p-7">
                 {/* Opening quote mark */}
@@ -74,15 +74,15 @@ export function Testimonials() {
                   />
                 </svg>
 
-                <p className="flex-1 text-[15px] leading-[1.6] text-[#71717a]">
+                <p className="flex-1 text-[15px] leading-[1.6] text-muted-foreground">
                   {t.quote}
                 </p>
 
-                <div className="border-t border-white/[0.07] pt-4">
-                  <p className="text-[15px] font-semibold text-white">
+                <div className="border-t border-border pt-4">
+                  <p className="text-[15px] font-semibold text-foreground">
                     {t.name}
                   </p>
-                  <p className="text-[13px] text-[#71717a]">{t.title}</p>
+                  <p className="text-[13px] text-muted-foreground">{t.title}</p>
                 </div>
               </CardContent>
             </Card>

@@ -17,15 +17,28 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d2d2d7;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
 
 /* Apple blue gradient text */
 .gradient-text {
+  background: linear-gradient(135deg, #1d1d1f 0%, #3b9eff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
   background: linear-gradient(135deg, #ffffff 0%, #3b9eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,7 +63,15 @@ html {
 
 /* Section alternating background */
 .section-gray {
-  background-color: #f5f5f7;
+  background-color: var(--muted);
+}
+
+/* Theme-aware grid overlay */
+.grid-overlay {
+  background-image:
+    linear-gradient(var(--foreground) 1px, transparent 1px),
+    linear-gradient(90deg, var(--foreground) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 /* Shimmer for skeleton states */
@@ -122,6 +143,42 @@ html {
 }
 
 :root {
+  /* Light mode (default) */
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #f5f5f7;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #0071e3;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f5;
+  --secondary-foreground: #09090b;
+  --muted: #f0f0f5;
+  --muted-foreground: #6e6e73;
+  --accent: #f0f0f5;
+  --accent-foreground: #09090b;
+  --destructive: #ef4444;
+  --border: #d2d2d7;
+  --input: #d2d2d7;
+  --ring: #0071e3;
+  --chart-1: #3b82f6;
+  --chart-2: #34aadc;
+  --chart-3: #8b5cf6;
+  --chart-4: #22c55e;
+  --chart-5: #f59e0b;
+  --radius: 0.75rem;
+  --sidebar: #f5f5f7;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #0071e3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8e8ed;
+  --sidebar-accent-foreground: #09090b;
+  --sidebar-border: #d2d2d7;
+  --sidebar-ring: #0071e3;
+}
+
+.dark {
   --background: #09090b;
   --foreground: #fafafa;
   --card: #111114;

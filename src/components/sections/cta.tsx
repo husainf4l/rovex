@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="contact" className="bg-[#09090b] py-28 border-t border-white/[0.06]">
+    <section id="contact" className="bg-background py-28 border-t border-border">
       <div className="mx-auto max-w-[980px] px-5">
-        <div className="overflow-hidden rounded-3xl bg-black border border-white/[0.07] px-8 py-20 text-center sm:px-16 lg:px-24">
-          <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#0071e3]">
+        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#0071e3] to-[#0055b3] px-8 py-20 text-center sm:px-16 lg:px-24 shadow-2xl shadow-primary/30">
+          <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/60">
             Get Started
           </p>
           <h2 className="text-[40px] font-extrabold leading-[1.06] tracking-[-0.03em] text-white sm:text-[52px] lg:text-[60px]">
@@ -16,7 +16,7 @@ export function CTA() {
             <br />
             next digital product?
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-[17px] leading-[1.6] text-white/60">
+          <p className="mx-auto mt-5 max-w-lg text-[17px] leading-[1.6] text-white/70">
             Let’s talk about your project — no commitment required. Our team
             will get back to you within one business day.
           </p>
@@ -26,28 +26,28 @@ export function CTA() {
               href="mailto:hello@rovex.ro"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "rounded-full bg-white px-8 text-[#1d1d1f] hover:bg-white/90"
+                "rounded-full bg-white px-8 text-[#0071e3] font-bold hover:bg-white/90"
               )}
             >
               Talk to Our Team
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
-              href="#solutions"
+              href="#services"
               className={cn(
                 buttonVariants({ variant: "ghost", size: "lg" }),
                 "rounded-full px-8 text-white hover:bg-white/10"
               )}
             >
-              View Case Studies
+              View Our Services
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-[13px] text-white/40">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-[13px] text-white/50">
             <span>Free initial consultation</span>
-            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <span className="h-1 w-1 rounded-full bg-white/30" />
             <span>Response within 24 hours</span>
-            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <span className="h-1 w-1 rounded-full bg-white/30" />
             <span>No commitment required</span>
           </div>
         </div>

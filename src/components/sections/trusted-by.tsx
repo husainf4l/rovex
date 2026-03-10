@@ -18,11 +18,11 @@ export function TrustedBy() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center gap-10">
           <div className="flex items-center gap-6 w-full max-w-xl">
-            <Separator className="bg-white/10 flex-1" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/30 text-center whitespace-nowrap">
+            <Separator className="bg-border flex-1" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-foreground/30 text-center whitespace-nowrap">
               Trusted by teams across Europe
             </span>
-            <Separator className="bg-white/10 flex-1" />
+            <Separator className="bg-border flex-1" />
           </div>
 
           {/* Logo strip */}
