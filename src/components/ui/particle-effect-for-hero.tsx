@@ -271,11 +271,11 @@ export const AntiGravityCanvas: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-0 overflow-hidden cursor-crosshair"
+      className="absolute inset-0 z-0 overflow-hidden cursor-default"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <canvas ref={canvasRef} className="block w-full h-full" />
+      <canvas ref={canvasRef} className="block w-full h-full cursor-default" style={{ cursor: "default" }} />
     </div>
   );
 };

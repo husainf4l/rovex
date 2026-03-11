@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure canvas elements never override cursor */
+canvas {
+  cursor: default !important;
+}
+
 /* Apple-style custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
