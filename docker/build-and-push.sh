@@ -29,13 +29,16 @@ echo ""
 
 # Step 1: Login to GitHub Container Registry
 echo -e "${BLUE}🔑 Step 1/4: Logging in to GitHub Container Registry...${NC}"
-echo "${GITHUB_TOKEN}" | docker login ${REGISTRY} -u husainf4l --password-stdin
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Login successful${NC}"
+if [ -n "${GITHUB_TOKEN}" ]; then
+    echo "${GITHUB_TOKEN}" | docker login ${REGISTRY} -u husainf4l --password-stdin
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✅ Login successful${NC}"
+    else
+        echo -e "${RED}❌ Login failed${NC}"
+        exit 1
+    fi
 else
-    echo -e "${RED}❌ Login failed${NC}"
-    exit 1
+    echo -e "${GREEN}⏭️  GITHUB_TOKEN not set — using existing Docker credentials${NC}"
 fi
 echo ""
 
